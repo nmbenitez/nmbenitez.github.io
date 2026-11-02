@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vicarius CVE Research Tracker has moved</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://vicarius-cve-tracker.pages.dev/" />
+  <!-- Fallback when JavaScript is off (drops ?cve=… / #…, but still lands on the site). -->
+  <meta http-equiv="refresh" content="0; url=https://vicarius-cve-tracker.pages.dev/" />
+  <script>
+    // nmbenitez.github.io now only forwards to the Vicarius CVE Research Tracker. Links under
+    // /vicarius-cve-tracker/ (the tracker's old GitHub Pages address, used in release-alert emails
+    // and shares) keep their sub-path, ?cve= / ?q= query and #hash; anything else goes to the home page.
+    (function () {
+      var NEW_ORIGIN = "https://vicarius-cve-tracker.pages.dev";
+      var OLD_BASE = "/vicarius-cve-tracker";
+      var p = location.pathname;
+      var keep = p === OLD_BASE || p.indexOf(OLD_BASE + "/") === 0;
+      var path = keep ? (p.slice(OLD_BASE.length) || "/") : "/";
+      location.replace(NEW_ORIGIN + path + (keep ? location.search + location.hash : ""));
+    })();
+  </script>
+  <style>body{font:16px/1.5 system-ui,sans-serif;margin:0;display:grid;place-items:center;min-height:100vh;background:#191952;color:#ccceff}a{color:#fff}</style>
+</head>
+<body>
+  <p>The Vicarius CVE Research Tracker has moved to <a href="https://vicarius-cve-tracker.pages.dev/">vicarius-cve-tracker.pages.dev</a>.</p>
+</body>
+</html>
